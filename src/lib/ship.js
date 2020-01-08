@@ -1,19 +1,25 @@
-const Ship = (length) => {
-  this.length = length;
+const Ship = (length, start, end) => {
+  let hits = 0;
+  const generateShip = (start, end) => {
+    const newShip = [];
+    for (let i = start; i < end; i += 1) {
+      newShip.push(i);
+    }
+    return newShip;
+  };
+  const positions = generateShip(start, end);
 
-  const isHit = (number) => {
-     return number;
-  } 
-
-  const isSunk = () => {
-   return false;
-  }
-
+  const isSunk = () => hits === length;
+  const hit = () => {
+    hits += 1;
+    return hits;
+  };
   return {
-    isHit, isSunk, length 
-  }
+    length,
+    positions,
+    isSunk,
+    hit,
+  };
 };
 
 export default Ship;
-
-//random for vertical and horizontal: as a function to return the direction
