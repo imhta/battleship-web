@@ -11,3 +11,12 @@ const humanPlayer = HumanPlayer({ enemyBoard: computerPlayerBoard });
 const computerPlayer = ComputerPlayer({ enemyBoard: humanPlayerBoard });
 
 const UI = UIController({ humanPlayerBoard, computerPlayerBoard });
+
+const computerBoardElement = document.getElementById('computer-player-board');
+
+computerBoardElement.addEventListener('click', ({ target }) => {
+    console.log(target.id);
+  humanPlayer.attack(Number(target.id));
+  computerPlayer.attack();
+  UI.update(computerPlayerBoard, humanPlayerBoard);
+});
