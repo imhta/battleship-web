@@ -1,7 +1,7 @@
-const Player = enemyBoard => {
+const Player = (enemyBoard) => {
   let totalMoves = 0;
   const isWon = () => {
-    if (totalMoves >= enemyBoard.totalShipsLength) {
+    if (totalMoves >= enemyBoard.totalShipsLength()) {
       return enemyBoard.isAllSunk();
     }
     return false;
