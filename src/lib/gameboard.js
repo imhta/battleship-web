@@ -58,6 +58,7 @@ const GameBoard = () => {
     occupied,
     missed,
     hits,
+    ships,
     totalShipsLength,
     randomUnder,
     everyAttack,
