@@ -1,9 +1,7 @@
-import GameBoard from './gameboard';
 import Player from './player';
 
-const ComputerPlayer = (() => {
-  const enemyBoard = GameBoard();
-  const PlayerUtil = Player();
+const ComputerPlayer = ({ enemyBoard }) => {
+  const PlayerUtil = Player(enemyBoard);
   const { isWon } = PlayerUtil;
   const generateRandomTarget = () => {
     let tryCentTimes = 100;
@@ -24,6 +22,6 @@ const ComputerPlayer = (() => {
     attack,
     isWon,
   };
-})();
+};
 
 export default ComputerPlayer;

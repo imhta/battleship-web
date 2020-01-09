@@ -1,9 +1,7 @@
-import GameBoard from './gameboard';
 import Player from './player';
 
-const HumanPlayer = (() => {
-  const enemyBoard = GameBoard();
-  const PlayerUtil = Player();
+const HumanPlayer = ({ enemyBoard }) => {
+  const PlayerUtil = Player(enemyBoard);
   const { isWon } = PlayerUtil;
   const attack = (position) => {
     PlayerUtil.incrementMove();
@@ -14,6 +12,6 @@ const HumanPlayer = (() => {
     attack,
     isWon,
   };
-})();
+};
 
 export default HumanPlayer;
