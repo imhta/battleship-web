@@ -8,7 +8,7 @@ const GameBoard = () => {
   const hits = [];
 
   occupied.mergeInPlace = (...ship) => ship.forEach(val => occupied.push(val));
-  ships.findShip = (position) => ships.filter((val) => val.indexOf(position) >= 0)[0];
+  ships.findShip = (position) => ships.filter((val) => val.positions.indexOf(position) >= 0)[0];
   const randomUnder = (max) => Math.floor(Math.random() * max);
   const placeShipRandom = (shipLength) => {
     const isPossible = (ship) => !ship.reduce(
