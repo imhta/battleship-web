@@ -5,6 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "test": "jest",
+    "guard": "jest --watch",
     "start": "live-server ./public/",
     "watch": "webpack --watch",
     "build": "webpack"
