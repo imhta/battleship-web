@@ -38,10 +38,7 @@ const GameBoard = () => {
       placeShipRandom(shipLength);
     });
   };
-  const isAllSunk = () => ships.reduce(
-    (acc, ship) => acc && ship.isSunk(),
-    true,
-  );
+  const isAllSunk = () => ships.every((ship) => ship.isSunk());
   const receiveAttack = (position) => {
     const allPreviousAttacks = [...missed, ...hits];
     if (allPreviousAttacks.indexOf(position) === -1) {
